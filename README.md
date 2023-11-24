@@ -103,7 +103,7 @@ To train DivideLCCN on CIFAR-10/CIFAR-100 with different noisy types/ratios, sim
   <img src="figures/results.png" width="1000px" />
 </div>
 
-### Citation
+## Citation
 ```
 @article{yao2023latent,
   title={Latent Class-Conditional Noise Model},
