@@ -10,6 +10,12 @@ parameterize the noise transition under a Bayesian framework. By projecting the 
 
 ## Get Started
 
+### construct the noisy dataset
+```Shell
+  python dataset.py
+  ```
+
+
 The implementation of LCCN can be found in [LCCN](https://github.com/Sunarker/Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision).
 
 
