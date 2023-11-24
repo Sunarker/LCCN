@@ -10,20 +10,45 @@ parameterize the noise transition under a Bayesian framework. By projecting the 
 
 ## Get Started
 
-### construct the noisy dataset
+### Environments
+The project is tested under the following environment settings:
+- OS: Ubuntu 18.04.5
+- GPU: NVIDIA GeForce RTX 3090
+- Python: 3.7.10
+- PyTorch: 1.7.1
+- Torchvision: 0.8.2
+- Cudatoolkit: 11.0.221
+- Numpy: 1.21.2
+- Tensorflow: 1.8.0
+
+### Code Structure
+We summarize the codes as the following structure
+```
+├── README.md
+├──                                              # Tensorflow code for LCCN
+├── data/cifar10/cifar-10-batches-bin/*          # data files
+│── cifar10_input.py                             # read data
+│── cifar10.py                                   # backbone (training and inference)
+│── cifar10_train.py                             # CE         
+│── cifar10_train_bootstrapping.py               # CE with the bootstrapped labels
+│── cifar10_train_T.py                           # CE with the transition matrix
+│── cifar10_train_varT.py                        # CE with the adapted transition matrix
+│── cifar10_train_varC.py                        # CE with LCCN
+│── cifar10_train_T.py                           # CE with the transition matrix
+│── cifar10_train_T.py                           # CE with the transition matrix
+│── cifar10_eval.py                              # evaluation
+├──                                              # Torch code for DivideLCCN
+│── PreResNet.py                                 # Resnet Backbone 1
+│── resnet_model.py                              # Resnet Backbone 2
+│── dataloader_cifar.py                          # read data
+│── divide_train_varC.py                         # DivideLCCN
+```
+
+### Construct the noisy dataset
 ```Shell
   python dataset.py
   ```
-
-
-The implementation of LCCN can be found in [LCCN](https://github.com/Sunarker/Safeguarded-Dynamic-Label-Regression-for-Noisy-Supervision).
-
-
-- Form the noisy datasets.
-```Shell
-  python dataset.py
-  ```
-
+### Baselines 
 - Train DNNs directly with the cross-entropy loss (CE).
 ```Shell
   python cifar10_train.py --train_dir results/events_ce/cifar10_train --noise_rate 0.3 # You can train other models like this one
@@ -43,14 +68,14 @@ The implementation of LCCN can be found in [LCCN](https://github.com/Sunarker/Sa
 ```Shell
   python cifar10_train_varT.py --init_dir results/events_ce/cifar10_train --train_dir results/events_varT/cifar10_train --noise_rate 0.3 # You can train other models like this one
   ```
-  
+
+### Train LCCN
 - Train LCCN
 ```Shell
   python cifar10_train_varC.py --init_dir results/events_ce/cifar10_train --train_dir results/events_varC/cifar10_train --noise_rate 0.3 # You can train other models like this one
 ```
 
-
-
+### Train DivideLCCN
 To train DivideLCCN on CIFAR-10/CIFAR-100 with different noisy types/ratios, simply run:
 
 - Train DivideLCCN, sym noise, CIFAR-10
