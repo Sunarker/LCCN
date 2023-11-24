@@ -98,8 +98,12 @@ To train DivideLCCN on CIFAR-10/CIFAR-100 with different noisy types/ratios, sim
   python divide_train_varC.py --noise_mode asym --r 0.1 --dataset cifar100 --num_class 100 --data_dir ${data_dir} # You can train other models like this one
 ```
 
+### Results (please refer to the [paper](https://arxiv.org/pdf/2302.09595.pdf) for more results)
+<div align="left">
+  <img src="figures/results.jpg" width="1000px" />
+</div>
 
-## Citation
+### Citation
 ```
 @article{yao2023latent,
   title={Latent Class-Conditional Noise Model},
