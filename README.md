@@ -100,7 +100,7 @@ To train DivideLCCN on CIFAR-10/CIFAR-100 with different noisy types/ratios, sim
 
 ### Results (please refer to the [paper](https://arxiv.org/pdf/2302.09595.pdf) for more results)
 <div align="left">
-  <img src="figures/results.jpg" width="1000px" />
+  <img src="figures/results.png" width="1000px" />
 </div>
 
 ### Citation
