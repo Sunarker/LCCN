@@ -1,21 +1,5 @@
 # Latent Class-Conditional Noise Model
 
-
-
-**[Latent Class-Conditional Noise Model](https://arxiv.org/pdf/2302.09595.pdf)**  
-
-TPAMI 2023
-
-```
-@article{yao2023latent,
-  title={Latent Class-Conditional Noise Model},
-  author={Yao, Jiangchao and Han, Bo and Zhou, Zhihan and Zhang, Ya and Tsang, Ivor W},
-  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
-  year={2023},
-  publisher={IEEE}
-}
-```
-
 <div align="left">
   <img src="figures/methods.jpg" width="1000px" />
 </div>
@@ -82,6 +66,17 @@ To train DivideLCCN on CIFAR-10/CIFAR-100 with different noisy types/ratios, sim
   python divide_train_varC.py --noise_mode asym --r 0.1 --dataset cifar100 --num_class 100 --data_dir ${data_dir} # You can train other models like this one
 ```
 
+
+**Citation
+```
+@article{yao2023latent,
+  title={Latent Class-Conditional Noise Model},
+  author={Yao, Jiangchao and Han, Bo and Zhou, Zhihan and Zhang, Ya and Tsang, Ivor W},
+  journal={IEEE Transactions on Pattern Analysis and Machine Intelligence},
+  year={2023},
+  publisher={IEEE}
+}
+```
 
 
 ## Acknowledgement
